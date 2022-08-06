@@ -1,0 +1,11 @@
+note: this list should turn into a test suite
+
+
+* things are around you
+  - circle with you in the center represents a 3d dimension flatten
+  - color symbolises how good/bad
+    ~ red bad
+    ~ green good
+  - size represents scale
+  - transparency symbolises how true the information is
+    ~ the more the thing is unknown, the more its color and size are random

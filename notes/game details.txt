@@ -1,0 +1,18 @@
+
+* things appear with random expiry dates
+  - if it expires an effect triggers
+* as you hold your mouse down on a thing, time passes and you work that thing
+* you can work an action within the thing to modify the thing
+  - a thing could start as neutral, but if you spend time and effort working that thing, it could convert 
+* you want to allocate your resources to where it will make the most difference
+  - its better to sacrifice taking a small bad if it gives the opportunity of a large good
+* things can modify  either in an instant, or over time
+* sometimes a thing can have no workable task, and all you can do is watch it
+* You can work the task to gain information on it. sometimes, the task is workable, but you dont know probability of success, or the gain on success, and the loss on fail.
+* probability of outcome 
+* you have state, if they drop too low then bad things happen
+* can pass time on sleep, instant gratification
+  - sleep gives: brain energy, body energy, good feeling comfort
+  - eating gives: brain energy, body energy, good feeling food
+  - socialising gives: good feeling social, good feeling fun
+  - entertainment: good feeling fun, good feeling comfort

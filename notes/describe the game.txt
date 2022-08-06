@@ -1,0 +1,70 @@
+
+
+
+* things come up based on environment, person, thought
+
+* this is 2 things in 1, it is a thought feeling calculator and a game
+
+
+
+* the examples outline simple examples for proof of fundamental mechanics, however these simple examples arent the type of scenarios the game was intended for.
+  - a game is a simulated environment that has
+    ~ a challenge (challenges)
+    ~ rules
+    ~ influence/engagement/control/options/abilities/tools
+  - the thing that makes a game fun is 
+    ~ challenge, mastery, skill, recognition, sense of accomplishment
+      * ego, pride
+      * degree of challenge intensity, 
+      * payoff is relative to 
+        - skill
+          ~ practice
+        - work
+          ~ practice
+        - talent
+          ~ logic
+        - hunger
+        - sacrifice/cost
+          ~ time, work, feelings, perspective, expense, relationships, missedOpportunities, privilege
+        - mindset
+          ~ positivity, focus
+        - strength
+          ~ perseverance, resilience, discipline, tenacity, grit
+
+        - sacrifice, , trust, , , memory, attention, , , , 
+      * pushing the limits, addiction, hungry for more
+
+
+* the game part has
+  - chose a character, with base stats
+    ~ this will have small influence how strategy/tactics
+  - random things come to your thought based on its total pressure
+    ~ pressure is based on different things, modified by influencing modifiers
+    ~ the higher the pressure, the more it will have your attention(you think about things that gain your attention)
+    ~ every game second, your brain scans for what can gain its attention
+    ~ when a thought comes, you can have options
+      * take chose one of the actions and take time to process it
+        - while doing the action
+          ~ you make progress on the action based on
+            * persons skill level in relative skills
+            * persons attitude
+            * persons energy
+            * things pressure
+          ~ demo scenarios
+            * if you take time to process an action
+              - while: you dont understand the action
+              - effect: you wont make much progress but you may make some progress in understanding the task better
+
+  - known things float around the sky, as you mouse over them, detail is revealed, and thinking progress is made
+  - when you have a thought, the longer you think about it, the more it will have an effect
+    ~ as you think there is the chance for hidden things to be revealed
+      * hidden things can be: new actions, new properties, new 
+  
+
+* large scale ideas
+  - unlockable characters with different pros and cons
+    ~ early characters have weak overall state, late game characters allow you to get to the end
+    ~ when you get to the end, each character has 2 unique challenges to try
+    ~ each challenge score contributes mind control power, conume mind control power to unlock characters
+  - play with multiple characters at once
+  - different types of environment have different probability of different events, stats

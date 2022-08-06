@@ -1,0 +1,3 @@
+@Minor 
+☐ bring json from client with initial load
+☐ on unload, save data (may not be possible)

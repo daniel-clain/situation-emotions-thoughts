@@ -1,0 +1,76 @@
+addition
+-----------------
+
+* focus of the game is fun
+  - fun comes from the skill in understanding the environment, options, challenges
+  - fun comes from working hard to do what you want to do, then discovering there is more to do
+
+* 1) how do you make them want to do it
+  - put them in the game with no instructions
+
+
+* 2) how do you make them want to do it
+  - give them a game and say try to beat it
+    ~ 1st level is to give an introduction to the bare minimum
+    ~ 2nd level is to introduce to them a prime concept
+    ~ 3rd level is to challenge them 
+    ~ 4th is reward for challenge
+
+
+
+
+
+---------------------
+
+
+
+
+
+
+* i need examples to flesh out what mechanics are base and what are long term extended
+
+
+main concepts example
+======================
+* good oppotunities come up, get them while you can, if you miss out it will be a big loss
+* if you ignore a little, it can grow exponentially
+* some thing may have a great pay off, a risk of failure and a small small failure penalty. if the risk is high enough, then the over-all risk value is tilted from positive to negative making it a bad option
+
+
+
+examples of things
+==================
+* make toast
+* job interview
+* need to vote
+* need to look for a job
+* need to renew passport
+* need to do amazon work
+* flip a coin
+
+examples of test scenarios
+===========================
+*if you want a, but b is blocking you, your motivation is a but your focus is b
+  - the test is, once you solve the challenge, you will not learn from solving b because you valued a, and thus you make the same mistake again, because you didnt stop to 
+
+
+/* 
+
+  * You can have a thought about a thing
+    - you can choose to do the thing
+    - doing it might cost you, not doing it might cost you
+    - sometimes its better to do nothing
+    - sometimes theres a great thing and you forget and ur mad
+
+
+*/
+
+
+
+/* 
+  * decisions
+    - triggers chain of events, state change
+    - put off a decision
+    - decision outcome changes over time, events can bet triggered by time
+    -
+ */

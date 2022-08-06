@@ -1,0 +1,182 @@
+
+@use 'helper-styles' as *
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap')
+
+$bluedHue: 212
+$yellowHue: 52
+$redHue: 5
+$purpeHue: 274
+$greenHue: 140
+
+situation-emotions-thoughts
+  font-family: 'Open Sans'
+  display: flex
+  flex-direction: column
+  justify-content: stretch
+  max-width: 30rem
+  margin: auto
+  background: white
+  min-height: 100%
+  box-shadow: 0 0 0.7rem 0.2rem #090927
+
+  button
+    @include button()
+    &.add-button
+      @include button(green)
+
+    &.delete-button
+      @include button(red)
+
+    &.collapse-button
+      @include button(purple)
+
+  h1
+    font-size: 1rem
+  h2
+    font-size: .75em
+  h3
+    font-size: .5em
+
+  
+  label
+    font-size: .5rem
+  
+  select
+    padding: .5rem .25rem
+
+
+  .flex-row
+    display: flex
+    gap: 0.5rem
+    align-items: center
+
+
+  input.search-input
+    margin-left: auto
+
+
+  input.search-input
+    margin-left: auto
+
+  user-select
+    max-width: 24rem
+    padding: 1rem
+    margin: 10% auto
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+
+
+
+  row-block
+    display: flex
+    justify-content: flex-end
+    margin-bottom: .5rem
+    gap: .5rem
+    align-items: center
+    width: 100%
+
+    h2
+      margin-right: auto
+
+  toasts-list
+    top: 1rem
+    right: 1rem
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+    position: fixed
+
+    toast-item
+      font-size: .5rem
+      padding: 1em
+      border-radius: .5em
+      border: .15em black solid
+      background: white
+      box-shadow: 0.1rem 0.1rem 0.1rem 0 rgb(0 0 0 / 30%)
+
+    
+  situations-list, 
+  emotions-list,
+  unhelpful-thoughts-list,
+  more-helpful-thoughts-list
+    padding: 1rem 0.5rem
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 100%
+    gap: 0.5rem
+
+
+  
+  situation-block,
+  unhelpful-thought-block,
+  more-helpful-thought,
+  emotion-item
+    width: 100%
+
+    textarea, input, select
+      &.data-input
+        flex: 1
+        font-size: .75rem
+        background: rgba(white, .7)
+        border: .15em solid hsl($bluedHue, 80%, 80%)
+        padding: .5em .75em
+        width: 100%
+        font-family: 'Open Sans'
+
+    label
+      font-size: .75rem
+
+    textarea
+      resize: none
+      min-height: 1rem
+
+  situation-emotions-thoughts,
+  situation-block,
+  unhelpful-thought-block,
+  unhelpful-thoughts-list,
+  emotions-list,
+  more-helpful-thoughts-list
+    background: hsla($bluedHue, 80%, 75%, .2)
+
+  
+  more-helpful-thoughts-list,
+  unhelpful-thoughts-list,
+  emotions-list
+    border-radius: .25rem
+  
+  situation-block,
+  unhelpful-thought-block
+    &:not(.is-open)
+      cursor: pointer
+      > textarea
+        min-height: 2rem
+      > input, > textarea
+        pointer-events: none
+      > :not(input, textarea)
+        display: none
+        
+    &.is-open
+      padding: 1rem  .5rem
+      border: .15em solid hsla($bluedHue, 60%, 70%, .3)
+      gap: 0.5rem
+      display: flex
+      flex-direction: column
+      > textarea
+        min-height: 6rem
+
+
+  more-helpful-thought,
+  emotion-item 
+    display: flex
+    gap: 0.5rem
+    margin: 0.1rem 0
+
+    .delete-button      
+      margin: auto 
+
+
+
+

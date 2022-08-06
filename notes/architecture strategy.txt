@@ -1,0 +1,7 @@
+
+* your saved data, separated by id
+* the saved data is put into a class to bring it alive as an instance
+* whenever you decide, saves are made from the client to back end
+  - if its firebase, instantly as it happens, if its jsno file, on timeInterval or important events or user action
+* the class instances have functions and getter properties  that 
+* events from within the view fire functions in the app store, thos changes affect the class instances and the data changes, then the views update

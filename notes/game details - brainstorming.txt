@@ -1,0 +1,49 @@
+* all the data that you are given is designed to entice you the way of your instant gratification
+* the real skill of the game is to use the hidden mechancs to get the highest score
+* the game will entice you to have short terms wins, and offer you compelling arguments
+
+
+
+goal
+=============
+* get high score for 'overall quality of life'
+* good things and not things specific, abstracted into just good bad points
+* turn based, you chose what you do with your time
+* things can have different properties
+  - cost to do
+  - probability of scenario
+  - secenario outcome teirs
+    ~ 90% up, critical success
+    ~ 75% up, success
+    ~ 30% up, break even
+    ~ 10% up, fail
+    ~ 0% up critical failure
+  - posiblie for no tiers just outcome, possible for 2 or 3 outcomes 
+
+what is the skill of the game
+* time management
+* future planning
+* sacrifice
+* cross benefit analysis
+* accept the hand your dealt and do the best you can with the opportunities that are given
+
+
+real world scenarios mirrored in the game
+* people are scared to take risks
+* people will have ideas but wont fulfill with the action
+* to have a rich fulfilling life, you have to plan, sacrifice short term for long term win, make good judgements
+* its not a good idea to leave things to the last minute
+
+
+
+
+secondary possible ideas
+* happens metric
+* personality modifiers
+  - characters have different personalities that give them modifiers on game mechanics
+  - an adhd modification would be that it only gets hapyness for doings tasks that are done now
+  - if a person has a task that is bad and their modifier is 'doesnt like bad tasks', then doing the task will make the persons feeling go down
+  - if a person tries to do a task while they feel bad, their productivity will be negatively modified by feeling
+
+* start the game with 3 personalities just to show range
+* all personalities have pros and cons, this make certain tactics worse or better
