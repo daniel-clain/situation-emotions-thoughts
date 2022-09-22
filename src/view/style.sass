@@ -24,6 +24,7 @@ situation-emotions-thoughts
     @include button()
     &.add-button
       @include button(green)
+      margin-right: auto
 
     &.delete-button
       @include button(red)
@@ -35,8 +36,9 @@ situation-emotions-thoughts
     font-size: 1rem
   h2
     font-size: .75em
-  h3
-    font-size: .5em
+
+  h1,h2
+    text-transform: capitalize
 
   
   label
@@ -72,7 +74,6 @@ situation-emotions-thoughts
   row-block
     display: flex
     justify-content: flex-end
-    margin-bottom: .5rem
     gap: .5rem
     align-items: center
     width: 100%
@@ -99,8 +100,7 @@ situation-emotions-thoughts
     
   situations-list, 
   emotions-list,
-  unhelpful-thoughts-list,
-  more-helpful-thoughts-list
+  thoughts-list
     padding: 1rem 0.5rem
     display: flex
     flex-direction: column
@@ -111,8 +111,7 @@ situation-emotions-thoughts
 
   
   situation-block,
-  unhelpful-thought-block,
-  more-helpful-thought,
+  thought-item,
   emotion-item
     width: 100%
 
@@ -120,7 +119,6 @@ situation-emotions-thoughts
       &.data-input
         flex: 1
         font-size: .75rem
-        background: rgba(white, .7)
         border: .15em solid hsl($bluedHue, 80%, 80%)
         padding: .5em .75em
         width: 100%
@@ -132,50 +130,59 @@ situation-emotions-thoughts
     textarea
       resize: none
       min-height: 1rem
+      width: 100%
 
   situation-emotions-thoughts,
   situation-block,
-  unhelpful-thought-block,
-  unhelpful-thoughts-list,
   emotions-list,
-  more-helpful-thoughts-list
-    background: hsla($bluedHue, 80%, 75%, .2)
+  thoughts-list,
+  thought-item
+    background: hsla($bluedHue, 80%, 75%, .1)
+
+  situation-block
+    emotion-item 
+      display: flex
+      gap: 0.5rem
+
+      .delete-button      
+        margin: auto 
 
   
-  more-helpful-thoughts-list,
-  unhelpful-thoughts-list,
+  thoughts-list,
   emotions-list
-    border-radius: .25rem
+    border-radius: .25rem,
+
+    
+  thoughts-list
+    thought-item
+
   
-  situation-block,
-  unhelpful-thought-block
+  thought-item,
+  situation-block
+    width: 100%
+    display: flex
+    flex-direction: column
+
+    
+
     &:not(.is-open)
       cursor: pointer
       > textarea
         min-height: 2rem
-      > input, > textarea
         pointer-events: none
-      > :not(input, textarea)
+      > *:not(textarea)  
         display: none
+
         
     &.is-open
+      gap: 0.5rem
       padding: 1rem  .5rem
       border: .15em solid hsla($bluedHue, 60%, 70%, .3)
-      gap: 0.5rem
-      display: flex
-      flex-direction: column
       > textarea
         min-height: 6rem
 
 
-  more-helpful-thought,
-  emotion-item 
-    display: flex
-    gap: 0.5rem
-    margin: 0.1rem 0
 
-    .delete-button      
-      margin: auto 
 
 
 

@@ -48,3 +48,11 @@ export function debounce(functionId: string): Promise<void>{
 
   });
 }
+
+export function deleteByProperty<T, T2 extends keyof T>(
+  {array, prop, val}:
+  {array: T[], prop: T2, val:any}
+): void{
+  const index = array.findIndex(item => item[prop] == val)
+  array.splice(index, 1)
+}

@@ -9,7 +9,7 @@ import { Main_V } from './views/main.v';
 import { initialSetup } from './main.service';
 import { StrictMode } from 'react';
 import { state } from './state';
-import { UserSelect_C } from './components/user-select.component';
+import { UserSelect_C } from './components/user-select';
 import { observer } from 'mobx-react';
 
 

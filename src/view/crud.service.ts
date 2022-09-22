@@ -1,23 +1,25 @@
 import { action } from "mobx"
 import { ChangeEvent } from "react"
-import { Situation, Thought, ChallengeRating } from "../app/types"
+import { createThought } from "../app/creators"
+import { Situation, Thought, StrengthRating, NegativeThought, ThoughtType_L } from "../app/types"
+import { deleteByProperty } from "../helper-functions"
 import { createToast, debounceSave, saveData } from "./main.service"
 import { state } from "./state"
 
 export const addSituation = action(() => {  
-  if(state.situations.find(s => s.situation == '')) return
-  state.situations = [{
-    situation:'',
+  if(state.situations.find(s => s.name == '')) return
+  state.situations.unshift({
+    name:'',
     emotions: [],
-    thoughts: []
-  }, ...state.situations]
+    negativeThoughts: []
+  })
   console.log('situations add');
 })
 
 
 export const updateSituation = action(
-  ({target}: ChangeEvent<HTMLInputElement>, situation: Situation) => {
-    situation.situation = target.value
+  ({target}: ChangeEvent<HTMLTextAreaElement>, situation: Situation) => {
+    situation.name = target.value
     debounceSave('Situation')
   }
 )
@@ -26,7 +28,11 @@ export const updateSituation = action(
 export const deleteSituation = action((situation: Situation) => {
   const confirmed = confirm('Are you sure you want to delete situation?')
   if(confirmed){
-    state.situations = state.situations.filter(s => s != situation)
+    deleteByProperty({
+      array: state.situations, 
+      prop: 'name', 
+      val: situation.name
+    })
     saveData()
     .then(() => createToast('Situation Deleted'))
   }
@@ -62,78 +68,75 @@ export const deleteEmotion = action((situation: Situation, emotion: string) => {
 
 
 
-export const addUnhelpfulThought = action((situation: Situation) => {
-  if(situation.thoughts.find(t => t.unhelpfulThought == '')) return
-  situation.thoughts.unshift({
-    unhelpfulThought: '',
-    challengeRating: 'Standard',
-    helpfulThoughts: ['']
-  })
-
-})
-
-
-export const updateUnhelpfulThought = action((
-  {target}: ChangeEvent<HTMLTextAreaElement>, 
+export const updateStrengthRating = action((
+  {target}: ChangeEvent<HTMLSelectElement>,
   thought: Thought
 ) => {
-  thought.unhelpfulThought = target.value
-  debounceSave('Unhelpful Thought')
+  thought.strengthRating = target.value as StrengthRating
+  saveData()
+  .then(() => createToast('Challenge Rating Updated'))
 })
 
-
-export const deleteUnhelpfulThought = action((
-  situation: Situation, 
+export const updateType = action((
+  {target}: ChangeEvent<HTMLSelectElement>,
   thought: Thought
 ) => {
-  const confirmed = confirm('Are you sure you want to delete though?')
-  if(confirmed){
-    situation.thoughts = situation.thoughts.filter(t => t != thought)
-    saveData()
-    .then(() => createToast('Unhelpful Thought Deleted'))
+  thought.type = target.value as ThoughtType_L
+  saveData()
+  .then(() => createToast('Type Updated'))
+})
+
+export const addThought = action((parent: Thought | Situation) => {
+  
+  console.log('addThought :>> ', parent);
+  if('negativeThoughts' in parent){
+    const situation = parent as Situation
+    if(situation.negativeThoughts.some(t => t.name == '')) return
+    situation.negativeThoughts.unshift(createThought('negative'))    
+  } else {
+    const thought = parent as Thought
+    if(thought.counterThoughts.some(t => t.name == '')) return
+    thought.counterThoughts.unshift(createThought("more helpful"))
+
   }
 
 })
 
 
-export const updateChallengeRating = action((
-  {target}: ChangeEvent<HTMLSelectElement>,
+
+export const updateThought = action((
+  {target}: ChangeEvent<HTMLTextAreaElement>,
   thought: Thought
 ) => {
-  thought.challengeRating = target.value as ChallengeRating
-  saveData()
-  .then(() => createToast('Challenge Rating Updated'))
-})
-
-
-
-export const addHelpfulThought = action((thought: Thought) => {
-  console.log('thought.helpfulTHoughts :>> ', thought.helpfulThoughts);
-  if(thought.helpfulThoughts.some(ht => ht == '')) return
-  thought.helpfulThoughts.unshift('')
-})
-
-
-
-export const updateHelpfulThought = action((
-  {target}: ChangeEvent<HTMLTextAreaElement>,
-  thought: Thought,
-  helpfulThought: string
-) => {
-
-  thought.helpfulThoughts = thought.helpfulThoughts.map(ht => 
-    ht == helpfulThought ? target.value : ht
-  )    
+  thought.name = target.value  
   debounceSave('Helpful Thought')
 })
 
 
-export const deleteHelpfulThought = action((thought: Thought,  helpfulThought: string) => {
+export const deleteThought = action((
+  thought: Thought,
+  parent: Thought | Situation
+) => {
   const confirmed = confirm('Are you sure you want to delete?')
   if(confirmed){
-    thought.helpfulThoughts = thought.helpfulThoughts.filter(t => t != helpfulThought)
+    if('counterThoughts' in parent){
+      const parentThought = parent as Thought
+      deleteByProperty({
+        array: parentThought.counterThoughts, 
+        prop: 'name', 
+        val: thought.name
+      })
+    } else {
+      const situation = parent as Situation
+      deleteByProperty({
+        array: situation.negativeThoughts, 
+        prop: 'name', 
+        val: thought.name
+      })
+
+    }
     saveData()
-    .then(() => createToast('Helpful Thought Deleted'))
+    .then(() => createToast('Thought Deleted'))
   }
 
 })

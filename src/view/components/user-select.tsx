@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
 import { useState } from 'react'
-import { createUser, userSelected } from '../main.service'
+import { createToast, createUser, userSelected } from '../main.service'
 import { state } from '../state'
 
 export const UserSelect_C = observer(() => {
@@ -10,7 +10,9 @@ export const UserSelect_C = observer(() => {
 
   return (
     <user-select>
-      <select onChange={userSelected}>
+      <select onChange={(
+        ({target: {value}}) => userSelected(value)
+      )}>
         <option>Select User</option>
         {users.map(user => 
           <option key={user} value={user}>{user}</option>
@@ -19,7 +21,10 @@ export const UserSelect_C = observer(() => {
       <div className='flex-row'>
         <label>Name:</label>
         <input onChange={({target: {value}}) => setName(value)} value={name}/>
-        <button onClick={() => createUser(name)}>Create User</button>
+        <button onClick={() => {
+          createUser(name)
+          setName('')
+        }}>Create User</button>
       </div>
     </user-select>
   )
