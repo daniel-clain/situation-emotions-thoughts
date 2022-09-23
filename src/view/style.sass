@@ -115,7 +115,7 @@ situation-emotions-thoughts
   emotion-item
     width: 100%
 
-    textarea, input, select
+    editable-text, input, select
       &.data-input
         flex: 1
         font-size: .75rem
@@ -127,8 +127,7 @@ situation-emotions-thoughts
     label
       font-size: .75rem
 
-    textarea
-      resize: none
+    editable-text
       min-height: 1rem
       width: 100%
 
@@ -167,10 +166,10 @@ situation-emotions-thoughts
 
     &:not(.is-open)
       cursor: pointer
-      > textarea
+      > editable-text
         min-height: 2rem
         pointer-events: none
-      > *:not(textarea)  
+      > *:not(editable-text)  
         display: none
 
         
@@ -178,7 +177,7 @@ situation-emotions-thoughts
       gap: 0.5rem
       padding: 1rem  .5rem
       border: .15em solid hsla($bluedHue, 60%, 70%, .3)
-      > textarea
+      > editable-text
         min-height: 6rem
 
 

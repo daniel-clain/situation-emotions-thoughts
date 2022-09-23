@@ -1,5 +1,5 @@
 import { action } from "mobx"
-import { ChangeEvent } from "react"
+import { ChangeEvent, FormEvent } from "react"
 import { createThought } from "../app/creators"
 import { Situation, Thought, StrengthRating, NegativeThought, ThoughtType_L } from "../app/types"
 import { deleteByProperty } from "../helper-functions"
@@ -18,8 +18,8 @@ export const addSituation = action(() => {
 
 
 export const updateSituation = action(
-  ({target}: ChangeEvent<HTMLTextAreaElement>, situation: Situation) => {
-    situation.name = target.value
+  (name: string, situation: Situation) => {
+    situation.name = name
     debounceSave('Situation')
   }
 )

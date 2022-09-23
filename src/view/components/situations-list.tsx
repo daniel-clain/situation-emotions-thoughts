@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Situation } from '../../app/types'
 import { addSituation } from '../crud.service'
 import { Situation_P } from './situation'
@@ -30,13 +30,19 @@ export const SituationsList_C = observer(() => {
           >
             Add Situation
           </button>
-          <input
-            placeholder='Search'
-            className='search-input'
-            onChange={({target:{value}}) => setSituationFilter(value)} 
-          />
         </row-block>  
 
+        {situations.length ?
+          <row-block>
+            <h2>Situations</h2>
+            <input
+              placeholder='Search'
+              className='search-input'
+              onChange={({target:{value}}) => setSituationFilter(value)} 
+            />
+          </row-block>  
+          : <></>
+        }
 
         {situations
           .filter(s => !situationFilter ? s : s.name.includes(situationFilter))
